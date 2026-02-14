@@ -1,5 +1,5 @@
 import aiResearchImg from '../assets/AI_image2.png';
-import cloudImg from '../assets/cloud_image3.png';
+import cloudImg from '../assets/ai_cloud_image3.png';
 import saasImg from '../assets/Saas_blog3.png';
 import webImg from '../assets/web_development_blog4.png';
 import cyberImg from '../assets/cyber_security_blog5.png';
