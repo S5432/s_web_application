@@ -1,9 +1,9 @@
-import aiResearchImg from '../assets/ai_image2.png';
-import cloudImg from '../assets/ai_cloud_image3.png';
-import saasImg from '../assets/saas_blog3.png';
-import webImg from '../assets/web_development_blog4.png';
-import cyberImg from '../assets/cyber_security_blog5.png';
-import digitalImg from '../assets/digital_transformation_blog1.png';
+import aiResearchImg from '../assets/ai_image.png';
+import cloudImg from '../assets/ai_cloud_image.png';
+import saasImg from '../assets/saas_blog.png';
+import webImg from '../assets/web_development_blog.png';
+import cyberImg from '../assets/cyber_security_blog.png';
+import digitalImg from '../assets/digital_transformation_blog.png';
 
 
 export const blogs = [
