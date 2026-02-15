@@ -59,6 +59,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Container from '../../layout/Container';
+import techVideo from "../../../assets/tech_v6.mp4";
 
 const CompanyStory = () => {
     return (
@@ -85,7 +86,7 @@ const CompanyStory = () => {
                                 playsInline
                             >
                                 <source
-                                    src="src/assets/tech_v6.mp4"
+                                    src={techVideo}
                                     type="video/mp4"
                                 />
                                 Your browser does not support the video tag.
