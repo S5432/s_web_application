@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Fragment } from 'react';
 import { Disclosure, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Link, useLocation } from 'react-router-dom';
@@ -36,7 +37,7 @@ const Navbar = () => {
             "sticky top-0 z-50 bg-white/95 backdrop-blur-md transition-all duration-300 border-b",
             scrolled ? "border-gray-200 shadow-sm" : "border-transparent"
         )}>
-            {({ open }) => (
+            {({ open, close }) => (
                 <>
                     <Container>
                         <div className="relative flex h-20 items-center justify-between">
@@ -95,6 +96,8 @@ const Navbar = () => {
 
                     {/* Mobile Menu Panel */}
                     <Transition
+                        as={Fragment}
+                        show={open}
                         enter="transition duration-100 ease-out"
                         enterFrom="transform scale-95 opacity-0"
                         enterTo="transform scale-100 opacity-100"
@@ -107,10 +110,10 @@ const Navbar = () => {
                                 {navigation.map((item) => {
                                     const isActive = location.pathname === item.href;
                                     return (
-                                        <Disclosure.Button
+                                        <Link
                                             key={item.name}
-                                            as={Link}
                                             to={item.href}
+                                            onClick={() => close()}   // 👈 CLOSE MENU SAFELY
                                             className={classNames(
                                                 isActive
                                                     ? 'bg-primary-50 text-primary-600 border-l-4 border-primary-600'
@@ -119,18 +122,18 @@ const Navbar = () => {
                                             )}
                                         >
                                             {item.name}
-                                        </Disclosure.Button>
+                                        </Link>
                                     );
                                 })}
                                 {/* Mobile CTA */}
                                 <div className="mt-4 pt-4 border-t border-gray-100">
-                                    <Disclosure.Button
-                                        as={Link}
+                                    <Link
                                         to="/contact"
+                                        onClick={() => close()}   // 👈 ADD HERE
                                         className="block w-full text-center px-4 py-3 rounded-lg text-white bg-primary-600 hover:bg-primary-700 font-semibold shadow-sm"
                                     >
                                         Contact Us
-                                    </Disclosure.Button>
+                                    </Link>
                                 </div>
                             </div>
                         </Disclosure.Panel>
